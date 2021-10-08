@@ -17,7 +17,7 @@ function loadStaker(id: string): Staker {
   return <Staker>staker;
 }
 
-// JohnGovernance::Staked event handler
+// BottoGovernance::Staked event handler
 export function handleStaked(event: StakedEvent): void {
   let staker = loadStaker(event.params.staker.toHex());
 
@@ -38,7 +38,7 @@ export function handleStaked(event: StakedEvent): void {
   staker.save();
 }
 
-// JohnGovernance::Unstaked event handler
+// BottoGovernance::Unstaked event handler
 export function handleUnstaked(event: UnstakedEvent): void {
   let staker = loadStaker(event.params.staker.toHex());
   var currentStakeIds = staker.bottoStakeIds;
@@ -52,7 +52,7 @@ export function handleUnstaked(event: UnstakedEvent): void {
   }
 }
 
-// JohnLiquidityMining::Stake event handler
+// BottoLiquidityMining::Stake event handler
 export function handleStake(event: StakeEvent): void {
   let staker = loadStaker(event.params.staker.toHex());
 
@@ -73,7 +73,7 @@ export function handleStake(event: StakeEvent): void {
   staker.save();
 }
 
-// JohnLiquidityMining::Withdraw event handler
+// BottoLiquidityMining::Withdraw event handler
 export function handleWithdraw(event: WithdrawEvent): void {
   let staker = loadStaker(event.params.staker.toHex());
   var currentStakeIds = staker.bottoEthStakeIds;
