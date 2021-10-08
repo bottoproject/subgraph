@@ -1,0 +1,11 @@
+{
+  "network": "goerli",
+  "governance": {
+    "address": "0xA9d5BAD8FF13A66E02aAC4F8d82463755bFD7994",
+    "startBlock": 5628100
+  },
+  "mining": {
+    "address": "0x5fc3c666cf94025e74D1D2609d5b89eb33099a73",
+    "startBlock": 5628100
+  }
+}

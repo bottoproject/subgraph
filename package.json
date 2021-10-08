@@ -1,0 +1,36 @@
+{
+  "name": "botto-subgraph",
+  "version": "1.0.0",
+  "description": "Subgraph for indexing BOTTO and BOTTO-ETH stakes",
+  "homepage": "https://github.com/bottoproject/subgraph",
+  "repository": {
+    "url": "https://github.com/bottoproject/subgraph.git",
+    "type": "git"
+  },
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "create-local": "graph create --node http://localhost:8020/ botto/subgraph",
+    "remove-local": "graph remove --node http://localhost:8020/ botto/subgraph",
+    "deploy": "graph deploy elevenyellow/botto-goerli-voting-rights --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ --access-token XXX",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 botto/subgraph",
+    "deploy-goerli": "graph deploy elevenyellow/botto-goerli-voting-rights --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ --access-token XXX",
+    "deploy-mainnet": "graph deploy elevenyellow/botto-voting-rights --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ --access-token XXX",
+    "prepare:goerli": "mustache config/goerli.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:kovan": "mustache config/kovan.json subgraph.template.yaml > subgraph.yaml",
+    "prepare:mainnet": "mustache config/mainnet.json subgraph.template.yaml > subgraph.yaml"
+  },
+  "author": "Botto",
+  "license": "MIT",
+  "devDependencies": {
+    "truffle": "^5.1.65"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "^0.19.0",
+    "@graphprotocol/graph-ts": "^0.19.0",
+    "mustache": "^4.1.0"
+  },
+  "engines": {
+    "node": "14.15.4"
+  }
+}

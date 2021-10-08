@@ -1,0 +1,23 @@
+type Staker @entity {
+  id: ID!
+  bottoStakeIds: [String!]
+  bottoEthStakeIds: [String!]
+  bottoStakes: [BottoStake!] @derivedFrom(field: "staker")
+  bottoEthStakes: [BottoEthStake!] @derivedFrom(field: "staker")
+}
+
+type BottoStake @entity {
+  id: ID!
+  staker: Staker!
+  amount: BigInt!
+  start: BigInt!
+  end: BigInt
+}
+
+type BottoEthStake @entity {
+  id: ID!
+  staker: Staker!
+  amount: BigInt!
+  start: BigInt!
+  end: BigInt
+}

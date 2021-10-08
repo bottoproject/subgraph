@@ -1,0 +1,11 @@
+{
+  "network": "mainnet",
+  "governance": {
+    "address": "0x19CD3998f106eCC40eE7668c19C47e18b491e8a6",
+    "startBlock": 13371261
+  },
+  "mining": {
+    "address": "0xf8515Cae6915838543bCD7756F39268CE8F853Fd",
+    "startBlock": 13371466
+  }
+}
